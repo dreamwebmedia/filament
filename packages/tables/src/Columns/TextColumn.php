@@ -38,6 +38,15 @@ class TextColumn extends Column
     protected TextColumnSize | string | Closure | null $size = null;
 
     protected bool | Closure $isLimitedListExpandable = false;
+    
+    protected int | Closure $rowSpan = 0;
+
+    public function rowSpan(int | Closure $rowSpan = 0): static
+    {
+        $this->$rowSpan = $rowSpan;
+
+        return $this;
+    }
 
     public function badge(bool | Closure $condition = true): static
     {
